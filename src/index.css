@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+.font-roboto {
+  font-family: "Roboto", sans-serif;
+}
+
+.black-gradient {
+  background: hsla(0, 0%, 10%, 1);
+
+  background: linear-gradient(
+    90deg,
+    hsla(0, 0%, 10%, 1) 0%,
+    hsla(0, 0%, 0%, 1) 100%
+  );
+
+  background: -moz-linear-gradient(
+    90deg,
+    hsla(0, 0%, 10%, 1) 0%,
+    hsla(0, 0%, 0%, 1) 100%
+  );
+
+  background: -webkit-linear-gradient(
+    90deg,
+    hsla(0, 0%, 10%, 1) 0%,
+    hsla(0, 0%, 0%, 1) 100%
+  );
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#252525", endColorstr="#000000", GradientType=1 );
+}
+
+.yellow-gradient {
+  background: hsla(39, 100%, 50%, 1);
+
+  background: linear-gradient(
+    90deg,
+    hsla(39, 100%, 50%, 1) 0%,
+    hsla(49, 100%, 67%, 1) 100%
+  );
+
+  background: -moz-linear-gradient(
+    90deg,
+    hsla(39, 100%, 50%, 1) 0%,
+    hsla(49, 100%, 67%, 1) 100%
+  );
+
+  background: -webkit-linear-gradient(
+    90deg,
+    hsla(39, 100%, 50%, 1) 0%,
+    hsla(49, 100%, 67%, 1) 100%
+  );
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA600", endColorstr="#FFDF58", GradientType=1 );
+}
