@@ -32,7 +32,7 @@ const Header = () => {
         </div>
 
         {/* nav links after md */}
-        <div className="hidden md:block text-white tracking-wide">
+        <div className="hidden md:block text-[#f1f1f1] tracking-wide">
           <div className="flex gap-5 xl:gap-10 text-sm lg:text-base xl:text-lg justify-center items-center">
             {navLinks?.map((linkData, linkIndex) => {
               return (
@@ -73,7 +73,10 @@ const Header = () => {
                       {linkData?.sub_links?.map(
                         (sub_link_data, sub_link_index) => {
                           return (
-                            <div className=" cursor-pointer ">
+                            <div
+                              key={sub_link_index}
+                              className=" cursor-pointer "
+                            >
                               <h1 className=" p-3 text-sm text-gray-700 hover:text-black">
                                 {sub_link_data?.link_name}
                               </h1>
@@ -94,7 +97,7 @@ const Header = () => {
           <div className="flex flex-row  w-full justify-center items-center text-sm lg:text-base xl:text-lg gap-2 lg:gap-4">
             {header_cta?.map((data, index) => {
               return (
-                <div>
+                <div key={index}>
                   <button
                     className={` ${
                       data?.cta_type === "Primary"

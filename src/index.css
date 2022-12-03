@@ -1,8 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
 .font-roboto {
   font-family: "Roboto", sans-serif;
@@ -54,4 +54,10 @@
   );
 
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA600", endColorstr="#FFDF58", GradientType=1 );
+}
+
+.text-stroke {
+  /* Prefix required. Even Firefox only supports the -webkit- prefix */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }

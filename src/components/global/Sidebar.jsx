@@ -24,7 +24,7 @@ const Sidebar = () => {
         <div className=" flex flex-col gap-2">
           {navLinks?.map((linkData, linkIndex) => {
             return (
-              <div>
+              <div key={linkIndex}>
                 <div
                   className=" p-5 border-b-[#131313] border-b cursor-pointer"
                   onClick={() =>
@@ -64,7 +64,7 @@ const Sidebar = () => {
                   <div className="flex flex-col gap-1 min-h-full">
                     {linkData?.sub_links?.map((subLinkData, subLinkIndex) => {
                       return (
-                        <div className="cursor-pointer">
+                        <div key={subLinkIndex} className="cursor-pointer">
                           <h1 className="text-base sm:text-lg py-2 text-gray-300 ">
                             {subLinkData?.link_name}
                           </h1>
@@ -82,7 +82,7 @@ const Sidebar = () => {
           <div className="flex flex-col sm:flex-row  w-full justify-center items-center p-5 gap-5">
             {header_cta?.map((data, index) => {
               return (
-                <div>
+                <div key={index}>
                   <button
                     className={` ${
                       data?.cta_type === "Primary"

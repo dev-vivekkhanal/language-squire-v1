@@ -1,10 +1,16 @@
 import React from "react";
-import HeroSection from "../components/homePage/heroSection/HeroSection";
+import CoursesSection from "../components/homePage/CoursesSection";
+import DemoBanner from "../components/homePage/DemoBanner";
+import FeaturesSection from "../components/homePage/FeaturesSection";
+import HeroSection from "../components/homePage/HeroSection";
 
 const HomePage = () => {
   return (
-    <div className="bg-[#ffdf58] h-[200vh]">
+    <div className="bg-[#ffdf58] ">
       <HeroSection />
+      <FeaturesSection />
+      <DemoBanner />
+      <CoursesSection />
     </div>
   );
 };
