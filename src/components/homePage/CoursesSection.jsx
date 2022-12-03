@@ -60,7 +60,7 @@ const CoursesSection = () => {
           </h1>
         </div>
 
-        <div className="grid grid-cols-4 gap-10 mt-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-10 mt-16">
           {pageData?.map((data, index) => {
             return (
               <div
