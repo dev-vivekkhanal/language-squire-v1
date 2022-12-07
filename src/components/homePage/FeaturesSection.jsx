@@ -75,11 +75,11 @@ const FeaturesSection = () => {
                         className=" aspect-square group-hover:scale-105 transition-all"
                       />
                     </div>
-                    <div>
+                    <div className="w-[80%]">
                       <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold py-5">
                         {data?.h1}
                       </h1>
-                      <p className="text-justify text-gray-800 group-hover:text-black group-hover:font-medium">
+                      <p className=" text-gray-800 group-hover:text-black group-hover:font-medium text-justify">
                         {data?.p}
                       </p>
                     </div>
