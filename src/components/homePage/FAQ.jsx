@@ -56,7 +56,7 @@ const FAQ = () => {
         </h1>
 
         <div className=" mt-10 flex gap-5 ">
-          <div className="flex-1">
+          <div className="flex-1 ">
             {pageData?.map((data, index) => {
               return (
                 <div
