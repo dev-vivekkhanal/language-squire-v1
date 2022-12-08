@@ -3,6 +3,7 @@ import CoursesSection from "../components/homePage/CoursesSection";
 import DemoBanner from "../components/homePage/DemoBanner";
 import FAQ from "../components/homePage/FAQ";
 import FeaturesSection from "../components/homePage/FeaturesSection";
+import Footer from "../components/homePage/Footer";
 import HeroSection from "../components/homePage/HeroSection";
 import RegisterBanner from "../components/homePage/RegisterBanner";
 
@@ -12,10 +13,11 @@ const HomePage = () => {
       <HeroSection />
       <FeaturesSection />
       <DemoBanner />
-      <CoursesSection />
-      <RegisterBanner />'{/* testimonials section */}
+      <CoursesSection />'{/* testimonials section */}
       <div className="h-[90vh] bg-[#ffdf58]"></div>
       <FAQ />
+      <RegisterBanner />
+      <Footer />
     </div>
   );
 };

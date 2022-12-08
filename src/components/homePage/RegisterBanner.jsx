@@ -2,7 +2,7 @@ import React from "react";
 
 const RegisterBanner = () => {
   return (
-    <section className="bg-[#1e1e1e] text-[#f1f1f1] py-24 ">
+    <section className="text-[#1e1e1e] bg-[#f1f1f1] py-24 ">
       <div className="w-[95%] md:w-[85%] mx-auto flex flex-col gap-10 justify-between items-start sm:items-center ">
         <div className="space-y-5">
           <h1 className="text-2xl md:text-3xl  xl:text-4xl font-semibold ">

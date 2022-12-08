@@ -84,7 +84,7 @@ const FAQ = () => {
                   <p
                     className={`  ${
                       selectedFAQ === index ? "text-md  pt-2  " : " max-h-[0]"
-                    } h-full  transition-all   overflow-hidden `}
+                    } h-full  transition-all  duration-200 overflow-hidden `}
                   >
                     {data?.answer}
                   </p>
