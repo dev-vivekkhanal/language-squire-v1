@@ -11,6 +11,7 @@ import { sidebarStatusAtom } from "../../recoil/sidebar/SidebarStatusAtom";
 
 // assets
 import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   // global variables
@@ -73,14 +74,16 @@ const Header = () => {
                       {linkData?.sub_links?.map(
                         (sub_link_data, sub_link_index) => {
                           return (
-                            <div
+                            <Link
                               key={sub_link_index}
-                              className=" cursor-pointer "
+                              to={sub_link_data?.link_path}
                             >
-                              <h1 className=" p-3 text-sm text-gray-700 hover:text-black">
-                                {sub_link_data?.link_name}
-                              </h1>
-                            </div>
+                              <div className=" cursor-pointer hover:bg-[#ffd30f] transition-all ">
+                                <h1 className=" p-3 text-sm text-black">
+                                  {sub_link_data?.link_name}
+                                </h1>
+                              </div>
+                            </Link>
                           );
                         }
                       )}

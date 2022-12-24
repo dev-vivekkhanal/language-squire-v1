@@ -9,19 +9,19 @@ const navLinks = [
     sub_links: [
       {
         link_name: "IELTS regular course",
-        link_path: "/",
+        link_path: "/courses/1",
       },
       {
         link_name: "IELTS crash course",
-        link_path: "/",
+        link_path: "/courses/2",
       },
       {
         link_name: "IELTS polishing course",
-        link_path: "/",
+        link_path: "/courses/3",
       },
       {
         link_name: "Interview preparation",
-        link_path: "/",
+        link_path: "/courses/4",
       },
     ],
   },

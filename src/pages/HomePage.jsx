@@ -13,8 +13,8 @@ const HomePage = () => {
       <HeroSection />
       <FeaturesSection />
       <DemoBanner />
-      <CoursesSection />'{/* testimonials section */}
-      <div className="h-[90vh] bg-[#ffdf58]"></div>
+      <CoursesSection />
+
       <FAQ />
       <RegisterBanner />
       <Footer />
