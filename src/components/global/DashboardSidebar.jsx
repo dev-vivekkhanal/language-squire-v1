@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 
 // assets
 import logo from "../../assets/header/logo.png";
@@ -44,6 +45,8 @@ const DashboardSidebar = () => {
       },
     ],
   };
+
+  const location = useLocation();
   return (
     <>
       {/* hamburger menu */}
@@ -80,9 +83,19 @@ const DashboardSidebar = () => {
               return (
                 <div
                   key={index}
-                  className="py-5 cursor-pointer group hover:bg-white hover:bg-opacity-5 transition-all"
+                  className={`py-5 cursor-pointer group  transition-all ${
+                    location?.pathname == data?.link_path
+                      ? "bg-white bg-opacity-5"
+                      : "hover:bg-white hover:bg-opacity-5"
+                  } `}
                 >
-                  <div className="flex items-center gap-5 w-[90%] mx-auto group-hover:text-[#FFDF58] transition-all">
+                  <div
+                    className={` ${
+                      location?.pathname == data?.link_path
+                        ? "text-[#FFDF58]"
+                        : "group-hover:text-[#FFDF58]"
+                    } flex items-center gap-5 w-[90%] mx-auto  transition-all`}
+                  >
                     <div className="aspect-square w-[30px] rounded-full bg-[#FFDF58] "></div>
                     <div>{data?.link_name}</div>
                   </div>
