@@ -1,0 +1,20 @@
+######### LANDING PAGE ##########
+
+1. About page
+2. Contact page
+3. Link register to sign Up
+4. Courses Pages
+5. Level Check pages
+6. Finishing touch landing page
+
+
+######### STUDENT DASHBOARD ##########
+
+1. Protected Routes
+2. Dashboard layout
+3. Profile page
+4. Assestment page
+5. Curriculum page
+6. Dashboard page 
+
+

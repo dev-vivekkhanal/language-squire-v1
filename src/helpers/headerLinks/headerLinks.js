@@ -27,19 +27,19 @@ const navLinks = [
   },
   {
     link_name: "Check your level",
-    link_path: "/",
+    link_path: "/level_check",
     sub_links: [
       {
         link_name: "Beginner",
-        link_path: "/",
+        link_path: "/level_check/1",
       },
       {
         link_name: "Intermediate",
-        link_path: "/",
+        link_path: "/level_check/2",
       },
       {
         link_name: "Advance",
-        link_path: "/",
+        link_path: "/level_check/3",
       },
     ],
   },
@@ -53,13 +53,13 @@ const navLinks = [
 const header_cta = [
   {
     cta_name: "Sign In",
-    cta_path: "/",
+    cta_path: "/sign_in",
     cta_type: "Secondary",
   },
 
   {
     cta_name: "Sign Up",
-    cta_path: "/",
+    cta_path: "/sign_up",
     cta_type: "Primary",
   },
 ];

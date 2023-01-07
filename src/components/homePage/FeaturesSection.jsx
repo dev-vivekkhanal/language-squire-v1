@@ -49,7 +49,7 @@ const FeaturesSection = () => {
   return (
     <section>
       <div className="w-[95%] md:w-[85%] mx-auto py-32 text-[#1e1e1e]">
-        <div className="py-16 flex flex-col  gap-5">
+        <div className="py-16 flex flex-col 2xl:flex-row  gap-5">
           <div className="py-5 ">
             <h1 className="text-2xl md:text-3xl  xl:text-4xl font-bold">
               Why Choose{" "}

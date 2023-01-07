@@ -25,11 +25,13 @@ const Header = () => {
       <div className="w-[95%] mx-auto flex justify-between items-center py-5 ">
         {/* logo */}
         <div>
-          <img
-            src={logo}
-            alt="language squire"
-            className="w-[200px] md:w-[130px] lg:w-[150px] xl:w-[180px]"
-          />
+          <Link to="/">
+            <img
+              src={logo}
+              alt="language squire"
+              className="w-[200px] md:w-[130px] lg:w-[150px] xl:w-[180px]"
+            />
+          </Link>
         </div>
 
         {/* nav links after md */}
@@ -101,7 +103,8 @@ const Header = () => {
             {header_cta?.map((data, index) => {
               return (
                 <div key={index}>
-                  <button
+                  <Link
+                    to={data?.cta_path}
                     className={` ${
                       data?.cta_type === "Primary"
                         ? "text-yellow-500 border border-yellow-500 hover:bg-yellow-500 hover:text-black"
@@ -109,7 +112,7 @@ const Header = () => {
                     } rounded-lg p-2 px-3 lg:p-3 lg:px-4 xl:px-6 font-semibold active:scale-95 transition-all`}
                   >
                     {data?.cta_name}
-                  </button>
+                  </Link>
                 </div>
               );
             })}

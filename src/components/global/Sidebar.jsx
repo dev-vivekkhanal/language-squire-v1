@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import { useRecoilState } from "recoil";
 // helpers
 import { navLinks, header_cta } from "../../helpers/headerLinks/headerLinks";
-
 // recoil
 import { sidebarStatusAtom } from "../../recoil/sidebar/SidebarStatusAtom";
-
 // assets
 import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
 
@@ -16,7 +14,7 @@ const Sidebar = () => {
   const [activeLinkAccordian, setActiveLinkAccordian] = useState(null);
   return (
     <aside
-      className={`md:hidden black-gradient h-screen  fixed top-0 right-0 bottom-0 w-[70%] z-[49] pt-28 text-white transition-all duration-300 ${
+      className={`md:hidden black-gradient h-screen  fixed top-0 right-0 bottom-0 w-[100%] z-[49] pt-28 text-white transition-all duration-300 ${
         sidebarStatus ? "max-w-[350px] ease-in" : "max-w-0 ease-out"
       } `}
     >
