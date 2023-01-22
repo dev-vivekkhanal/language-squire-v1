@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 // assets
 import logo from "../../assets/header/logo.png";
@@ -8,9 +8,9 @@ const DashboardSidebar = () => {
   // links
   const sidebarData = {
     user_details: {
-      first_name: "Vivek",
-      last_name: "Khanal",
-      email: "vivek123@gmail.com",
+      first_name: localStorage.getItem("first_name"),
+      last_name: localStorage.getItem("last_name"),
+      email: localStorage.getItem("email"),
     },
     sidebar_links: [
       {
@@ -81,9 +81,10 @@ const DashboardSidebar = () => {
           <div className="mt-10">
             {sidebarData?.sidebar_links?.map((data, index) => {
               return (
-                <div
+                <Link
+                  to={data?.link_path}
                   key={index}
-                  className={`py-5 cursor-pointer group  transition-all ${
+                  className={`py-5 cursor-pointer group  block transition-all ${
                     location?.pathname == data?.link_path
                       ? "bg-white bg-opacity-5"
                       : "hover:bg-white hover:bg-opacity-5"
@@ -99,7 +100,7 @@ const DashboardSidebar = () => {
                     <div className="aspect-square w-[30px] rounded-full bg-[#FFDF58] "></div>
                     <div>{data?.link_name}</div>
                   </div>
-                </div>
+                </Link>
               );
             })}
           </div>
@@ -108,12 +109,12 @@ const DashboardSidebar = () => {
         {/* user details */}
         <div className="py-5 cursor-pointer group transition-all">
           <div className="flex items-center gap-5 w-[90%] mx-auto  transition-all">
-            <div className="aspect-square w-[40px] rounded-full bg-[#FFDF58] flex justify-center items-center text-black font-semibold">
+            <div className="aspect-square w-[40px] rounded-full bg-[#FFDF58] flex justify-center items-center text-black font-semibold uppercase">
               {sidebarData?.user_details?.first_name?.split("")[0]}
               {sidebarData?.user_details?.last_name?.split("")[0]}
             </div>
             <div>
-              <h1 className="truncate">
+              <h1 className="truncate capitalize">
                 {" "}
                 {sidebarData?.user_details?.first_name}{" "}
                 {sidebarData?.user_details?.last_name}

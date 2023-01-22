@@ -35,11 +35,22 @@ const SignIn = () => {
         data: userCredentials,
       })
         .then(function (response) {
-          //   console.log("response:", response?.data);
-          navigate("/dashboard");
+          if (response?.data?.status) {
+            if (response?.data?.token) {
+              localStorage.setItem("token", response?.data?.token);
+              localStorage.setItem("user_type", response?.data?.user_type);
+              localStorage.setItem("first_name", response?.data?.first_name);
+              localStorage.setItem("last_name", response?.data?.last_name);
+              localStorage.setItem("email", response?.data?.email);
+              if (response?.data?.user_type === "u") {
+                navigate("/user/dashboard");
+              } else navigate("/");
+            }
+          } else {
+            setErrorText(response?.data?.message);
+          }
         })
         .catch(function (error) {
-          console.log("error:", error);
           if (error?.response?.data?.error) {
             setErrorText(error?.response?.data?.error);
           } else {

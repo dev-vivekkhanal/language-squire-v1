@@ -64,13 +64,23 @@ const Header = () => {
                     )}
                   </div>
 
+                  {/* overlay */}
+                  <div
+                    onClick={() => setActiveLinkAccordian(null)}
+                    className={` ${
+                      activeLinkAccordian === linkData?.link_name
+                        ? "bg-black bg-opacity-0 inset-0 fixed z-10"
+                        : ""
+                    } `}
+                  ></div>
+                  {/* accordian/menu items */}
                   <div
                     className={` ${
                       activeLinkAccordian === linkData?.link_name &&
                       linkData?.sub_links
                         ? "  max-h-[900px]"
                         : "max-h-[0px] "
-                    } overflow-hidden bg-[#FFDF58] rounded-md text-black shadow-2xl transition-all duration-300 absolute top-[110%] w-max min-w-[200px]`}
+                    } overflow-hidden bg-[#FFDF58] rounded-md text-black shadow-2xl transition-all duration-300 absolute z-20 top-[110%] w-max min-w-[200px]`}
                   >
                     <div>
                       {linkData?.sub_links?.map(

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 // assets
 import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
-import faqImage from "../../assets/landingPage/faq/faq.svg";
+import faqImage from "../../assets/landingPage/faq/question_mark.svg";
 
 const FAQ = () => {
   const [selectedFAQ, setSelectedFAQ] = useState(null);
@@ -93,8 +93,8 @@ const FAQ = () => {
             })}
           </div>
 
-          <div className="flex-1 hidden lg:block">
-            <img src={faqImage} alt="faq" className="w-[90%] ml-auto" />
+          <div className="flex-1  hidden lg:flex items-center justify-center">
+            <img src={faqImage} alt="faq" className="w-[50%] " />
           </div>
         </div>
       </div>

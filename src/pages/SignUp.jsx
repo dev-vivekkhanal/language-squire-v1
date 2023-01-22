@@ -58,11 +58,14 @@ const SignUp = () => {
       })
         .then(function (response) {
           console.log("signup response:", response?.data);
-          navigate("/");
+          navigate("/sign_in");
         })
         .catch(function (error) {
-          //   console.log("error:", error?.response?.data?.error);
-          setErrorText(error?.response?.data?.error);
+          if (error?.response?.data?.error) {
+            setErrorText(error?.response?.data?.error);
+          } else {
+            setErrorText("Something went wrong! Please try again.");
+          }
         });
     } else {
       setErrorText("Please fill all the fields.");
