@@ -15,6 +15,13 @@ import SignUp from "./pages/SignUp";
 import StudentDashboard from "./pages/StudentDashboard";
 import StudentProfile from "./components/studentDashboard/StudentProfile";
 import StudentCurriculum from "./components/studentDashboard/StudentCurriculum";
+import StudentAssestment from "./components/studentDashboard/StudentAssestment";
+import AdminDashboard from "./pages/AdminDashboard";
+import DashboardAdminSidebar from "./components/global/DashboardAdminSidebar";
+import AdminUsers from "./components/adminDashboard/AdminUsers";
+import AdminAssestment from "./components/adminDashboard/AdminAssestment";
+import AdminCurriculum from "./components/adminDashboard/AdminCurriculum";
+import AdminReports from "./components/adminDashboard/AdminReports";
 
 function App() {
   // Detecting current path
@@ -22,10 +29,17 @@ function App() {
 
   return (
     <div className="cursor-default font-roboto">
-      {location?.pathname?.includes("user") ? "" : <Header />}
+      {location?.pathname?.includes("user") ||
+      location?.pathname?.includes("admin") ? (
+        ""
+      ) : (
+        <Header />
+      )}
       <div>
         {location?.pathname?.includes("user") ? (
           <DashboardSidebar />
+        ) : location?.pathname?.includes("admin") ? (
+          <DashboardAdminSidebar />
         ) : (
           <Sidebar />
         )}
@@ -42,10 +56,18 @@ function App() {
           <Route path="/login" element={<Login />} />
         </Route> */}
 
-          {/* protected routes */}
+          {/* protected routes users */}
           <Route path="/user/dashboard" element={<StudentDashboard />} />
           <Route path="/user/profile" element={<StudentProfile />} />
           <Route path="/user/curriculum" element={<StudentCurriculum />} />
+          <Route path="/user/assestment" element={<StudentAssestment />} />
+
+          {/* protected routes admin */}
+          <Route path="/admin/dashboard" element={<AdminDashboard />} />
+          <Route path="/admin/students" element={<AdminUsers />} />
+          <Route path="/admin/assestment" element={<AdminAssestment />} />
+          <Route path="/admin/curriculum" element={<AdminCurriculum />} />
+          <Route path="/admin/reports" element={<AdminReports />} />
         </Routes>
       </div>
     </div>

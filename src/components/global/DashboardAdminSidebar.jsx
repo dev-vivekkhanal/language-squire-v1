@@ -6,22 +6,22 @@ import { useRecoilState } from "recoil";
 // assets
 import logo from "../../assets/header/logo.png";
 import { VITE_BASE_LINK } from "../../base_link/BaseLink";
-import { sidebarDataAtom } from "../../recoil/sidebar/sidebarDataAtom";
+import { adminSidebarDataAtom } from "../../recoil/sidebar/adminSidebarDataAtom";
 
-const DashboardSidebar = () => {
+const DashboardAdminSidebar = () => {
   // global variables
-  const [sidebarData, setSidebarData] = useRecoilState(sidebarDataAtom);
+  const [sidebarData, setSidebarData] = useRecoilState(adminSidebarDataAtom);
 
-  useEffect(() => {
-    const formData = new FormData();
-    formData?.append("token", localStorage?.getItem("token"));
-    axios.post(VITE_BASE_LINK + "/sideBar", formData)?.then((res) => {
-      setSidebarData({
-        ...sidebarData,
-        user_details: res?.data?.user_details,
-      });
-    });
-  }, []);
+  //   useEffect(() => {
+  //     const formData = new FormData();
+  //     formData?.append("token", localStorage?.getItem("token"));
+  //     axios.post(VITE_BASE_LINK + "/sideBar", formData)?.then((res) => {
+  //       setSidebarData({
+  //         ...sidebarData,
+  //         user_details: res?.data?.user_details,
+  //       });
+  //     });
+  //   }, []);
 
   const location = useLocation();
   return (
@@ -107,4 +107,4 @@ const DashboardSidebar = () => {
   );
 };
 
-export default DashboardSidebar;
+export default DashboardAdminSidebar;
