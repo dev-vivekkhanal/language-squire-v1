@@ -22,6 +22,7 @@ import AdminUsers from "./components/adminDashboard/AdminUsers";
 import AdminAssestment from "./components/adminDashboard/AdminAssestment";
 import AdminCurriculum from "./components/adminDashboard/AdminCurriculum";
 import AdminReports from "./components/adminDashboard/AdminReports";
+import StudentTestScreen from "./components/studentDashboard/StudentTestScreen";
 
 function App() {
   // Detecting current path
@@ -30,7 +31,8 @@ function App() {
   return (
     <div className="cursor-default font-roboto">
       {location?.pathname?.includes("user") ||
-      location?.pathname?.includes("admin") ? (
+      location?.pathname?.includes("admin") ||
+      location?.pathname?.includes("test") ? (
         ""
       ) : (
         <Header />
@@ -61,6 +63,11 @@ function App() {
           <Route path="/user/profile" element={<StudentProfile />} />
           <Route path="/user/curriculum" element={<StudentCurriculum />} />
           <Route path="/user/assestment" element={<StudentAssestment />} />
+
+          <Route
+            path="/test/:test_type/:assignment_id"
+            element={<StudentTestScreen />}
+          />
 
           {/* protected routes admin */}
           <Route path="/admin/dashboard" element={<AdminDashboard />} />

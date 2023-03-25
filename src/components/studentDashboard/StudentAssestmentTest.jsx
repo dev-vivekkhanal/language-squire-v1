@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { VITE_BASE_LINK } from "../../base_link/BaseLink";
 
 const StudentAssestmentTest = () => {
@@ -64,7 +65,7 @@ const StudentAssestmentTest = () => {
     let formData = new FormData();
     formData.append("token", localStorage.getItem("token"));
     axios.post(VITE_BASE_LINK + "/studentTestView", formData)?.then((res) => {
-      // console.log(res?.data);
+      console.log(res?.data);
       setTestData(res?.data);
     });
   }, []);
@@ -102,9 +103,23 @@ const StudentAssestmentTest = () => {
                         )}
                       </div>
 
-                      <button className="bg-[#ffee58] mt-5 p-3 active:scale-95 transition-all w-full rounded-lg">
-                        Start Now
-                      </button>
+                      {!section_data?.status ? (
+                        <Link
+                          to={
+                            "/test/" +
+                            section_data?.name?.toLowerCase() +
+                            "/" +
+                            data?.test_id
+                          }
+                          className=" block text-center bg-[#ffee58] mt-5 p-3 active:scale-95 transition-all w-full rounded-lg"
+                        >
+                          Start Now
+                        </Link>
+                      ) : (
+                        <div className=" block text-center bg-gray-200 mt-5 p-3  w-full rounded-lg">
+                          Test Submitted
+                        </div>
+                      )}
                     </div>
                   );
                 })}
